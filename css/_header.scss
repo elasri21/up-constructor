@@ -1,0 +1,152 @@
+header {
+    padding: 20px 0;
+    position: fixed;
+    z-index: 11111;
+    height: 70px;
+    top: 0;
+    left: 0;
+    right: 0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (min-width: 1000px) {
+            nav {
+                display: block !important;
+                & > ul {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    li {
+                        position: relative;
+                        &.down, a {
+                            border-bottom: 2px solid transparent;
+                            &.active {
+                                border-bottom-color: $yellow;
+                            }
+                            &:hover {
+                                border-bottom-color: $yellow;
+                            }
+                        }
+                        ul {
+                            position: absolute;
+                            top: 100%;
+                            display: none;
+                            flex-direction: column;
+                            gap: 20px;
+                            width: 170px;
+                            background-color: $white;
+                            padding: 20px;
+                            li {
+                                a, &.down {
+                                    font-size: 15px;
+                                    text-transform: capitalize;
+                                    font-weight: 500;
+                                    color: $title-color;
+                                    &:hover {
+                                        color: $yellow;
+                                        border-bottom-color: transparent;
+                                    }
+                                }
+                            }
+                            ul {
+                                right: 100%;
+                            }
+                        }
+                        &:hover {
+                            & > ul {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+            .open {
+                display: none !important;
+            }
+            .close {
+                display: none !important;
+            }
+        }
+        @media (max-width: 999px) {
+            nav {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, .8);
+                & > ul {
+                    padding: 100px 30px 0;
+                    li { 
+                        position: relative;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        a, &.down {
+                            font-size: 16px !important;
+                        }
+                        ul {
+                            display: none;
+                            flex-direction: column;
+                            gap: 20px;
+                            padding: 20px;
+                            box-shadow: 0 0 3px #eee;
+                            margin-top: 20px;
+                            li {
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                        i {
+                            position: absolute;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .logo {
+            a {
+                font-size: 20px;
+                font-weight: 600;
+                color: $white;
+                text-transform: uppercase;
+            }
+        }
+        nav {
+            display: none;
+            ul {
+                li {
+                    &.down, a {
+                        font-size: 17px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        border-bottom: 2px solid transparent;
+                        color: $link-color;
+                        &.active {
+                            color: $white;
+                        }
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        .close {
+            display: none;
+            position: relative;
+            i {
+                font-size: 30px;
+                color: $link-color;
+                cursor: pointer;
+            }
+        }
+        .open {
+            i {
+                font-size: 30px;
+                color: $link-color;
+                cursor: pointer;
+            }
+        }
+    }
+}

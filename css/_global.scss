@@ -1,0 +1,92 @@
+/* start global rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: $main-bg;
+    font-family: $primary-font;
+}
+section {
+    padding: 60px 0;
+}
+.container {
+    @media (min-width: 1200px) {
+        margin-left: 80px !important;
+        margin-right: 80px !important;
+    }
+    @media (min-width: 922px) and (max-width: 1199px) {
+        margin-left: 60px !important;
+        margin-right: 60px !important;
+    }
+    @media (min-width: 768px) and (max-width: 921px) {
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+    }
+    margin-left: 20px;
+    margin-right: 20px;
+}
+p {
+    font-family: $default-family;
+    color: $text-color;
+}
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+ul {
+    list-style: none;
+}
+input {
+    background: none;
+    border: none;
+    outline: none;
+    transition: .3s;
+    &[type="submit"] {
+        cursor: pointer;
+    }
+}
+textarea {
+    height: 120px;
+    outline: none;
+}
+.pattern {
+    margin-bottom: 30px;
+    h2 {
+        font-size: 30px;
+        text-transform: capitalize;
+        color: $title-color;
+        font-family: 600;
+        width: fit-content;
+        margin: 0 auto 20px;
+        text-align: center;
+        position: relative;
+        &::before, &::after {
+            content: "";
+            width: 60px;
+            height: 2px;
+            background-color: $yellow;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &::before {
+            right: calc(100% + 20px);
+        }
+        &::after {
+            left: calc(100% + 20px);
+        }
+    }
+    p {
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+/* end global rules */
