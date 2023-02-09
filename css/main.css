@@ -853,6 +853,9 @@ header .container .open i {
 .projects .container .examples .boxes .box .info:hover {
   opacity: 1;
 }
+.projects .container .examples .boxes .box.hide {
+  display: none;
+}
 
 /* end projects */
 /* strat testimonials */

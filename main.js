@@ -115,3 +115,24 @@ window.addEventListener("scroll", function () {
     }
 });
 
+// projects
+const categories = Array.from(document.querySelectorAll(".projects .shower span"));
+const projects = Array.from(document.querySelectorAll(".projects .boxes .box"));
+categories.forEach(category => {
+    category.addEventListener("click", function(){
+        for(let i = 0; i < categories.length; i++) {
+            categories[i].classList.remove("active");
+        }
+        projects.forEach(project => {
+            if(this.id == project.dataset.id && this.id != "all") {
+                project.classList.remove("hide");
+            } else if (this.id == "all") {
+                project.classList.remove("hide");
+            } else {
+                project.classList.add("hide");
+            }
+        });
+        this.classList.add("active");
+    });
+});
+
